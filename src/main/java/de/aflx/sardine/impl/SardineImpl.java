@@ -80,6 +80,8 @@ import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.VersionInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.aflx.sardine.DavResource;
 import de.aflx.sardine.Sardine;
@@ -104,7 +106,6 @@ import de.aflx.sardine.model.Multistatus;
 import de.aflx.sardine.model.Propfind;
 import de.aflx.sardine.model.Response;
 import de.aflx.sardine.model.Write;
-import de.aflx.sardine.util.Logger;
 import de.aflx.sardine.util.SardineUtil;
 
 /**
@@ -115,7 +116,7 @@ import de.aflx.sardine.util.SardineUtil;
  * @version $Id: SardineImpl.java 313 2011-11-18 22:18:37Z dkocher@sudo.ch $
  */
 public class SardineImpl implements Sardine {
-	private static Logger log = new Logger();
+	private static Logger log = LoggerFactory.getLogger(SardineImpl.class);
 
 	private static final String UTF_8 = "UTF-8";
 

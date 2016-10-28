@@ -53,15 +53,16 @@ import org.simpleframework.xml.Element;
 //
 //})
 //@XmlRootElement(name = "prop")
+// http://stackoverflow.com/questions/15041287/sardine-android-webdav
 public class Prop {
 
-	@Element
+	@Element(required = false)
 	private Resourcetype resourcetype;
-	@Element
+	@Element(required = false)
 	private String creationdate;
-	@Element
+	@Element(required = false)
 	private String getlastmodified;
-	@Element
+	@Element(required = false)
 	private String getetag;
 	@Element (required = false)
 	private String getcontenttype;
