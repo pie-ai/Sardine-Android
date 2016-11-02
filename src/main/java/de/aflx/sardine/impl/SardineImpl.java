@@ -241,7 +241,7 @@ public class SardineImpl implements Sardine {
 		// });
 		this.client.addRequestInterceptor(preemptiveAuth, 0);
 		this.setCredentials(username, password);
-		log.warn("init");
+		log.debug("init");
 	}
 
 	public HttpRequestBase getCurrentRequest() {
@@ -392,7 +392,7 @@ public class SardineImpl implements Sardine {
 	 * @see de.aflx.sardine.Sardine#list(java.lang.String)
 	 */
 	public List<DavResource> list(String url, int depth) throws IOException {
-		log.warn("list");
+		log.debug("list");
 		HttpPropFind entity = new HttpPropFind(url);
 		entity.setDepth(Integer.toString(depth));
 		Propfind body = new Propfind();
@@ -402,15 +402,15 @@ public class SardineImpl implements Sardine {
 		Multistatus multistatus = this.execute(entity,
 				new MultiStatusResponseHandler());
 		List<Response> responses = multistatus.getResponse();
-		log.warn("getResponse");
+		log.debug("getResponse");
 		List<DavResource> resources = new ArrayList<DavResource>(
 				responses.size());
 		for (Response response : responses) {
-			log.warn("LLL " + response.getHref());
+			log.debug("LLL " + response.getHref());
 			try {
 				resources.add(new DavResource(response));
 			} catch (URISyntaxException e) {
-				log.warn(String.format("Ignore resource with invalid URI %s",
+				log.debug(String.format("Ignore resource with invalid URI %s",
 						response.getHref()));
 			}
 		}
