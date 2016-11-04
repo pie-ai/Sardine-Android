@@ -392,7 +392,7 @@ public class SardineImpl implements Sardine {
 	 * @see de.aflx.sardine.Sardine#list(java.lang.String)
 	 */
 	public List<DavResource> list(String url, int depth) throws IOException {
-		log.debug("list");
+		log.debug("list(url={})", url);
 		HttpPropFind entity = new HttpPropFind(url);
 		entity.setDepth(Integer.toString(depth));
 		Propfind body = new Propfind();
@@ -402,11 +402,10 @@ public class SardineImpl implements Sardine {
 		Multistatus multistatus = this.execute(entity,
 				new MultiStatusResponseHandler());
 		List<Response> responses = multistatus.getResponse();
-		log.debug("getResponse");
 		List<DavResource> resources = new ArrayList<DavResource>(
 				responses.size());
 		for (Response response : responses) {
-			log.debug("LLL " + response.getHref());
+			log.debug("response: {}",response.getHref());
 			try {
 				resources.add(new DavResource(response));
 			} catch (URISyntaxException e) {
