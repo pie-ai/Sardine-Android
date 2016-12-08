@@ -17,10 +17,10 @@
 package de.aflx.sardine.impl.handler;
 
 import de.aflx.sardine.impl.SardineException;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.StatusLine;
-import org.apache.http.client.ResponseHandler;
+import cz.msebera.android.httpclient.HttpResponse;
+import cz.msebera.android.httpclient.HttpStatus;
+import cz.msebera.android.httpclient.StatusLine;
+import cz.msebera.android.httpclient.client.ResponseHandler;
 
 /**
  * Basic response handler which takes an url for documentation.

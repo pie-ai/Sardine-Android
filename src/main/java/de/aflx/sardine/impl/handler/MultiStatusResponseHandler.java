@@ -18,9 +18,9 @@ package de.aflx.sardine.impl.handler;
 
 import de.aflx.sardine.impl.SardineException;
 import de.aflx.sardine.model.Multistatus;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
+import cz.msebera.android.httpclient.HttpEntity;
+import cz.msebera.android.httpclient.HttpResponse;
+import cz.msebera.android.httpclient.StatusLine;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * {@link org.apache.http.client.ResponseHandler} which returns the {@link Multistatus} response of
+ * {@link cz.msebera.android.httpclient.client.ResponseHandler} which returns the {@link Multistatus} response of
  * a {@link de.aflx.sardine.impl.methods.HttpPropFind} request.
  *
  * @author mirko

@@ -16,7 +16,7 @@
 
 package de.aflx.sardine.impl;
 
-import org.apache.http.client.HttpResponseException;
+import cz.msebera.android.httpclient.client.HttpResponseException;
 
 /**
  * Specialized type of exception for Sardine so

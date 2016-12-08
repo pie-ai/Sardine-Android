@@ -28,58 +28,58 @@ import java.util.Map;
 
 import de.aflx.sardine.util.QName;
 
-import org.apache.http.HttpEntity;
-//import org.apache.http.HttpHeaders;
-import org.apache.http.HttpException;
-import org.apache.http.HttpHost;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpRequestInterceptor;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.HttpVersion;
-import org.apache.http.auth.AuthScope;
-import org.apache.http.auth.AuthState;
-import org.apache.http.auth.Credentials;
-import org.apache.http.auth.NTCredentials;
-import org.apache.http.auth.UsernamePasswordCredentials;
-//import org.apache.http.client.AuthCache;
-import org.apache.http.client.CredentialsProvider;
-import org.apache.http.client.HttpResponseException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpHead;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.client.params.AuthPolicy;
-import org.apache.http.client.protocol.ClientContext;
-//import org.apache.http.client.protocol.RequestAcceptEncoding;
-//import org.apache.http.client.protocol.ResponseContentEncoding;
-import org.apache.http.conn.ClientConnectionManager;
-import org.apache.http.conn.routing.HttpRoutePlanner;
-import org.apache.http.conn.scheme.PlainSocketFactory;
-import org.apache.http.conn.scheme.Scheme;
-import org.apache.http.conn.scheme.SchemeRegistry;
-import org.apache.http.conn.ssl.SSLSocketFactory;
-import org.apache.http.entity.ByteArrayEntity;
-import org.apache.http.entity.InputStreamEntity;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.auth.BasicScheme;
-import org.apache.http.impl.client.AbstractHttpClient;
-//import org.apache.http.impl.client.BasicAuthCache;
-import org.apache.http.impl.client.DefaultHttpClient;
-//import org.apache.http.impl.client.DefaultRedirectStrategy;
-import org.apache.http.impl.conn.ProxySelectorRoutePlanner;
-import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
-import org.apache.http.params.HttpProtocolParams;
-import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.ExecutionContext;
-import org.apache.http.protocol.HTTP;
-import org.apache.http.protocol.HttpContext;
-import org.apache.http.util.VersionInfo;
+import cz.msebera.android.httpclient.HttpEntity;
+//import cz.msebera.android.httpclient.HttpHeaders;
+import cz.msebera.android.httpclient.HttpException;
+import cz.msebera.android.httpclient.HttpHost;
+import cz.msebera.android.httpclient.HttpRequest;
+import cz.msebera.android.httpclient.HttpRequestInterceptor;
+import cz.msebera.android.httpclient.HttpResponse;
+import cz.msebera.android.httpclient.HttpStatus;
+import cz.msebera.android.httpclient.HttpVersion;
+import cz.msebera.android.httpclient.auth.AuthScope;
+import cz.msebera.android.httpclient.auth.AuthState;
+import cz.msebera.android.httpclient.auth.Credentials;
+import cz.msebera.android.httpclient.auth.NTCredentials;
+import cz.msebera.android.httpclient.auth.UsernamePasswordCredentials;
+//import cz.msebera.android.httpclient.client.AuthCache;
+import cz.msebera.android.httpclient.client.CredentialsProvider;
+import cz.msebera.android.httpclient.client.HttpResponseException;
+import cz.msebera.android.httpclient.client.ResponseHandler;
+import cz.msebera.android.httpclient.client.methods.HttpDelete;
+import cz.msebera.android.httpclient.client.methods.HttpGet;
+import cz.msebera.android.httpclient.client.methods.HttpHead;
+import cz.msebera.android.httpclient.client.methods.HttpPut;
+import cz.msebera.android.httpclient.client.methods.HttpRequestBase;
+import cz.msebera.android.httpclient.client.params.AuthPolicy;
+import cz.msebera.android.httpclient.client.protocol.ClientContext;
+//import cz.msebera.android.httpclient.client.protocol.RequestAcceptEncoding;
+//import cz.msebera.android.httpclient.client.protocol.ResponseContentEncoding;
+import cz.msebera.android.httpclient.conn.ClientConnectionManager;
+import cz.msebera.android.httpclient.conn.routing.HttpRoutePlanner;
+import cz.msebera.android.httpclient.conn.scheme.PlainSocketFactory;
+import cz.msebera.android.httpclient.conn.scheme.Scheme;
+import cz.msebera.android.httpclient.conn.scheme.SchemeRegistry;
+import cz.msebera.android.httpclient.conn.ssl.SSLSocketFactory;
+import cz.msebera.android.httpclient.entity.ByteArrayEntity;
+import cz.msebera.android.httpclient.entity.InputStreamEntity;
+import cz.msebera.android.httpclient.entity.StringEntity;
+import cz.msebera.android.httpclient.impl.auth.BasicScheme;
+import cz.msebera.android.httpclient.impl.client.AbstractHttpClient;
+//import cz.msebera.android.httpclient.impl.client.BasicAuthCache;
+import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
+//import cz.msebera.android.httpclient.impl.client.DefaultRedirectStrategy;
+import cz.msebera.android.httpclient.impl.conn.ProxySelectorRoutePlanner;
+import cz.msebera.android.httpclient.impl.conn.tsccm.ThreadSafeClientConnManager;
+import cz.msebera.android.httpclient.params.BasicHttpParams;
+import cz.msebera.android.httpclient.params.HttpConnectionParams;
+import cz.msebera.android.httpclient.params.HttpParams;
+import cz.msebera.android.httpclient.params.HttpProtocolParams;
+import cz.msebera.android.httpclient.protocol.BasicHttpContext;
+import cz.msebera.android.httpclient.protocol.ExecutionContext;
+import cz.msebera.android.httpclient.protocol.HTTP;
+import cz.msebera.android.httpclient.protocol.HttpContext;
+import cz.msebera.android.httpclient.util.VersionInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -827,10 +827,10 @@ public class SardineImpl implements Sardine {
 	}
 
 	/**
-	 * Creates a new {@link org.apache.http.conn.scheme.SchemeRegistry} for
+	 * Creates a new {@link cz.msebera.android.httpclient.conn.scheme.SchemeRegistry} for
 	 * default ports with socket factories.
 	 * 
-	 * @return a new {@link org.apache.http.conn.scheme.SchemeRegistry}.
+	 * @return a new {@link cz.msebera.android.httpclient.conn.scheme.SchemeRegistry}.
 	 */
 	protected SchemeRegistry createDefaultSchemeRegistry() {
 		SchemeRegistry registry = new SchemeRegistry();

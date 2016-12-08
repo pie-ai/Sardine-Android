@@ -18,8 +18,8 @@ package de.aflx.sardine.impl.methods;
 
 import java.net.URI;
 
-import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
-import org.apache.http.protocol.HTTP;
+import cz.msebera.android.httpclient.client.methods.HttpEntityEnclosingRequestBase;
+import cz.msebera.android.httpclient.protocol.HTTP;
 
 /**
  * Simple class for making WebDAV <code>PROPFIND</code> requests.

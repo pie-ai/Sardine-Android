@@ -18,8 +18,8 @@ package de.aflx.sardine.impl.methods;
 
 import java.net.URI;
 
-import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
-import org.apache.http.protocol.HTTP;
+import cz.msebera.android.httpclient.client.methods.HttpEntityEnclosingRequestBase;
+import cz.msebera.android.httpclient.protocol.HTTP;
 
 /**
  * @version $Id: HttpLock.java 290 2011-07-04 17:22:05Z latchkey $
